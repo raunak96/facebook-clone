@@ -5,7 +5,6 @@ import Image from "next/image";
 const Post = ({
 	name,
 	message,
-	email,
 	postImage,
 	image,
 	timestamp,
@@ -25,13 +24,15 @@ const Post = ({
 					<div>
 						<p className="font-medium">{name}</p>
 						<p className="text-xs text-gray-400">
-							{moment(
-								new Date(
-									isServerRendered
-										? timestamp
-										: timestamp.toDate()
-								)
-							).format("ll")}
+							{timestamp
+								? moment(
+										new Date(
+											isServerRendered
+												? timestamp
+												: timestamp.toDate()
+										)
+								  ).format("ll")
+								: "Loading Date..."}
 						</p>
 					</div>
 				</div>
