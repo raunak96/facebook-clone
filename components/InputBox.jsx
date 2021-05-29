@@ -60,9 +60,13 @@ const InputBox = () => {
 		// When file successfully loads
 		reader.onload = readerEvent => {
 			setImageForPost(readerEvent.target.result);
+			inputRef.current.focus();
 		};
 	};
-	const removeImageFromPost = () => setImageForPost(null);
+	const removeImageFromPost = () => {
+		setImageForPost(null);
+		inputRef.current.focus();
+	};
 	return (
 		<div className="bg-white p-2 rounded-2xl shadow-md text-gray-500 font-medium mt-6">
 			<div className="flex items-center space-x-4 p-4">
