@@ -63,6 +63,12 @@ Reference: https://stackoverflow.com/questions/55175445/cant-import-svg-into-nex
   ```
   FACEBOOK_CLIENT_ID=put your FB AppID
   FACEBOOK_CLIENT_SECRET=put your FB App SecretKey
-  NEXTAUTH_URL=http://localhost:3000
+  NEXTAUTH_URL=App URL
 
   ```
+
+### Facebook Auth Developer Settings for Production Deployment ([https://developers.facebook.com/apps](https://developers.facebook.com/apps))
+- Switch on Live/Production Mode
+- Add domain in Settings -> Basic
+- Go to Facebook Login -> Settings, then add the following to Valid OAuth Redirect URIs **domainurl/api/auth/callback/facebook**.
+
